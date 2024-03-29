@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: ` <router-outlet></router-outlet> `,
+  imports: [RouterOutlet, RouterLink],
+  template: `
+    <a routerLink="/">Home Page</a> | <a routerLink="/counter">NgRx Counter Page</a>
+
+    <router-outlet></router-outlet>
+  `,
   styles: [
     `
       :host {
